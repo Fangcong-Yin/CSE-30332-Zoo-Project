@@ -1,88 +1,96 @@
-/*Zoo Project Milestone 1
-Fangcong Yin (fyin2)
-Joseph Capdevielle (jcapdevi)
-Kenan Lumantas (klumanta)*/
+import java.util.ArrayList;
 
-//The Test Class
-public class ZooTest {
-  Animal[] alist;
+public class ZooTest { 
+  ArrayList<Animal> alist = new ArrayList<Animal>();
 
- public void setupAnimals(){
-   //TODO based on your selected animals
-   // create the zoo list of animals
-   /*
-       int numAnimals = 6;
-       alist = new Animal[6];
-       alist[0] = new Dodo("Daisy", “fruits”);
-       alist[1] = new Dog("Marlee", “rope”);
-       alist[2] = new Shark("Jawsy", 7);
-       alist[3] = new Dog("Bagheera", “frisbee”);
-   alist[3].setAge(10);
-       alist[4] = new Whale("Shamu", 30);
-       System.out.println("\n");
+  public void setupAnimals(){
+    // TODO based on your selected animals
+    // create the zoo list of animals
+    alist.add(new Snake("s","threatened","WATER",true,false,8.1,68,true,false));
+    alist.add(new Crocodile("c","least concerned","LAND",true,true,43.2,86,true,false));
+    alist.add(new Kangaroo("k", Animal.locationType.AIR, true, false, 3.2, Kangaroo.pouchSizeType.SMALL));
+    alist.add(new Monkey("m", Animal.locationType.LAND, true, false, 1.4, "Endangered", Mammal.furType.NO, true, 1.5, Monkey.intelType.NOTHING));
+    alist.add(new Parrot("pa", "least concern", "AIR",true, false, 8.2, 6.7, 4, "imitate human speech", "seeds"));
+    System.out.println("\n");
 
-       printSummaryView();
-       printVerboseList();
-       */
-   } // end of setupAnimals
+    printSummaryView();
+    printVerboseList();
+  } // end of setupAnimals
 
- int addAnimal(Animal a){//}
+  // int addAnimal(Animal a){...}
 
- int deleteAnimal(int index){//}
+  // int deleteAnimal(int index){...}
 
- void displayAnimals(String name) {//}
+  // void displayAnimals(String name) {...}
 
- void printSummaryView(){//}
+  void printSummaryView(){
+    int numCroc = 0;
+    int numKang = 0;
+    int numMonkey = 0;
+    int numParrot = 0;
+    int numPeng = 0;
+    int numSnake = 0;
 
- public static void printVerboseList(){
-       int numAnimals = alist.length;
 
-       for(int i = 0; i < numAnimals; i++){
-           System.out.println((i+1) + ": " + alist[i].getName() + "\t\t" + alist[i].getClass().getSimpleName() + "\t\t" +  alist[i]); // toString() needs to be defined for this to work correctly
-       } // end for
+    System.out.println("Summary:");
+    System.out.println("There are " + alist.size() + " animals in the zoo.");
+
+    for(Object o : alist){
+      if(o instanceof Crocodile){
+        numCroc++;
+      }
+      else if(o instanceof Kangaroo){
+        numKang++;
+      }
+      else if(o instanceof Monkey){
+        numMonkey++;
+      }
+      else if(o instanceof Parrot){
+        numParrot++;
+      }
+      else if(o instanceof Penguin){
+        numPeng++;
+      }
+      else if(o instanceof Snake){
+        numSnake++;
+      }
+    }
+
+    if(numCroc > 0){
+      System.out.println(numCroc + " Crocodile(s)");
+    }
+    if(numKang > 0){
+      System.out.println(numKang + " Kangaroo(s)");
+    }
+    if(numMonkey > 0){
+      System.out.println(numMonkey + " Monkey(s)");
+    }
+    if(numParrot > 0){
+      System.out.println(numParrot + " Parrot(s)");
+    }
+    if(numPeng > 0){
+      System.out.println(numPeng + " Penguin(s)");
+    }
+    if(numSnake > 0){
+      System.out.println(numSnake + " Snake(s)");
+    }
+    
+  }
+
+  public void printVerboseList(){
+    for(int i = 0; i < alist.size(); i++){
+      System.out.println((i+1) + ": " + alist.get(i).getName() + "\t\t" + alist.get(i).getClass().getSimpleName() + "\t\t" +  alist.get(i).description()); // toString() needs to be defined for this to work correctly
+    } // end for
 
 } // end of printVerboseList
 
 
- static String printInteractiveOptions(){ … }
+  // static String printInteractiveOptions(){ … }
 
-    public static void main(String args[]) {
+  public static void main(String[]args) {
+    ZooTest t = new ZooTest();
+    t.setupAnimals();
+    //TODO	interactively take input from user to manage zoo.
+  } // end of main function
 
-      Animal zoo[] = new Animal[6];
-
-      Snake s = new Snake("s","threatened","WATER",true,false,8.1,68,true,false);
-      zoo[0] = s;
-
-      Crocodile c = new Crocodile("c","least concerned","LAND",true,true,43.2,86,true,false);
-      zoo[1] = c;
-
-      Kangaroo k = new Kangaroo("k", Animal.locationType.AIR, true, false, 3.2, Kangaroo.pouchSizeType.SMALL);
-      zoo[2] = k;
-
-      Monkey m = new Monkey("m", Animal.locationType.LAND, true, false, 1.4, "Endangered", Mammal.furType.NO, true, 1.5, Monkey.intelType.NOTHING);
-      zoo[3] = m;
-
-      Parrot pa = new Parrot("pa", "least concern", "AIR",true, false, 8.2, 6.7, 4, "imitate human speech", "seeds");
-
-      zoo[4] = pa;
-
-      Penguin pe = new Penguin("pe","least concern","WATER", true, true, 11.7, 10.8, 7.9, "black");
-      zoo[5] = pe;
-
-      for(int i = 0; i < 6; i++)
-      {
-        System.out.println(zoo[i].description());
-        zoo[i].move();
-        zoo[i].speak();
-        zoo[i].eat();
-        if((zoo[i] instanceof Bird) )
-        {
-          ((Bird)zoo[i]).layEggs();
-        }
-        else if((zoo[i] instanceof Reptile && ((Reptile)zoo[i]).layEggs)){
-            ((Reptile)zoo[i]).layEggs();
-        }
-
-      }
-    }
-}
+} // end of ZooTest class
