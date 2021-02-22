@@ -2,7 +2,8 @@
 public final class Penguin extends Bird{
     //Properties
     String colorOfFeathers;
-    //Constructor
+    //Detailed Non-default Constructor
+
     Penguin(String name, String status, String loc, boolean alive,
          boolean hasChild, double age, double wingspan,
         double beakLength, String colorOfFeathers){
@@ -31,7 +32,22 @@ public final class Penguin extends Bird{
             this.location = locationType.ICE;
         }
     }
+      //Simplified Non-default constructor for user interaction: only take in the color argument
+    Penguin(String name, String colorOfFeathers){
 
+        this.name = name;
+        this.colorOfFeathers = colorOfFeathers;
+        //The following properties are set to some default values
+        this.conserveStatus = "least concerned";
+        this.alive = true;
+        this.hasChild = false;
+        this.age = 11.7;
+        this.wingspan = 10.8;
+        this.beakLength = 7.9;
+        this.food = "fish";
+        this.location = locationType.WATER;
+
+    }
     //Methods
     void move(){
         if(this.location == locationType.LAND){
@@ -64,5 +80,13 @@ public final class Penguin extends Bird{
         String result = this.name + " eats " + this.food + ".";
         return result;
     }
+
+    //briefDescription only prints out the name of the penguin and its feather color.
+    String briefDescription(){
+        String result = this.name +" is a " + this.getClass().getName() + ". ";
+        result+=this.name+"has a " + this.colorOfFeathers + " color of feathers.\n";;
+        return result;
+    }
+
 
 }

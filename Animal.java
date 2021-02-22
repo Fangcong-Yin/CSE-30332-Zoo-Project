@@ -1,4 +1,4 @@
-public abstract class Animal 
+public abstract class Animal
 {
         //Properties
         String name;
@@ -9,7 +9,7 @@ public abstract class Animal
         boolean hasChild;
         double age;
         String food;
- 
+
         //Behaviors
         abstract void move();
         abstract void speak();
@@ -39,7 +39,7 @@ public abstract class Animal
         {
                 this.alive = false;
         }
- 
+
         String description()
         {
                 String result = this.name + " is a " + this.getClass().getName() + ". ";
@@ -50,7 +50,9 @@ public abstract class Animal
                 result += "It currently has " + ((this.hasChild) ? "children." : "no children.");
                 result += this.classDescription(); // Call next level of description
                 result += "\n";
- 
+
                 return result;
         }
+        //briefDescription only prints out the name of the animal and one information that is related to the user input
+        abstract String briefDescription();
 }
