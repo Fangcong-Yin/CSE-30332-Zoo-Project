@@ -29,7 +29,7 @@ public class ZooTest {
      Animal new_a;
      //The scanner obeject
      Scanner sc = new Scanner(System.in);
-     System.out.println("Pleas enter the name of this animal:");
+     System.out.println("Please enter the name of this animal:");
      String name = sc.nextLine();
      if(a.equals("Kangaroo")){
        System.out.println("Please enter the pouch size of this kangaroo (Please choose from: SMALL, MEDIUM, LARGE)");
@@ -43,23 +43,23 @@ public class ZooTest {
        new_a = new Monkey(name,ability);
    }
      else if(a.equals("Parrot")){
-       System.out.println("Please enter how intelligence this parrot is (e.g. it can understand human speech.)");
+       System.out.println("Please enter how intelligent this parrot is (e.g. it can understand human speech.)");
        System.out.println("It can: ");
        String ability = sc.nextLine();
        new_a = new Parrot(name,ability);
      }
      else if(a.equals("Penguin")){
-       System.out.println("Pleas enter this penguin's color of feathers: ");
+       System.out.println("Please enter this penguin's color of feathers: ");
        String color = sc.nextLine();
        new_a = new Penguin(name,color);
      }
      else if(a.equals("Snake")){
-       System.out.println("Pleas enter whether this snake lays eggs (Y/N): ");
+       System.out.println("Please enter whether this snake lays eggs (Y/N): ");
        boolean layEggs = (sc.nextLine().equals("Y")?true:false);
        new_a = new Snake(name,layEggs);
      }
      else if(a.equals("Crocodile")){
-       System.out.println("Pleas enter the jaw length of this crocodile in cm: ");
+       System.out.println("Please enter the jaw length of this crocodile in cm: ");
        double len = sc.nextDouble();
        new_a = new Crocodile(name,len);
      }
@@ -155,23 +155,68 @@ public class ZooTest {
     if(numSnake > 0){
       System.out.println(numSnake + " Snake(s)");
     }
-
+	
+	System.out.println();
  }
 
- public void printVerboseList(){
-   for(int i = 0; i < alist.size(); i++){
-       System.out.println((i+1) + ": " + alist.get(i).getName() + "\t\t" + alist.get(i).getClass().getSimpleName() + "\t\t" +  alist.get(i).description()); 
-     }
-
-} // end of printVerboseList
-
-
- static String printInteractiveOptions(){return " ";};
-
-    public static void main(String args[]) {
-      ZooTest t = new ZooTest();
-      t.setupAnimals();
+	public void printVerboseList(){
+		for(int i = 0; i < alist.size(); i++){
+			System.out.println((i+1) + ": " + alist.get(i).getName() + "\t\t" + alist.get(i).getClass().getSimpleName() + "\t\t" +  alist.get(i).description()); 
+		}
+	} // end of printVerboseList
 
 
-    }
+	static void printInteractiveOptions()
+	{
+		System.out.println("Option:\nAdd animal(add)\nDelete animal(delete)\nDisplay animal(display)\nDisplay all with full descriptions(full)\nExit(exit)\n\nSelect action: ");
+		return;
+	};
+
+    public static void main(String args[])
+	{
+		ZooTest t = new ZooTest();
+		t.setupAnimals();
+
+		boolean exit = false;
+		Scanner in = new Scanner(System.in);
+		String input = "";
+
+		do{
+			t.printInteractiveOptions();
+			input = in.nextLine();
+			
+			switch(input)
+			{
+				case "add":
+					System.out.println("What kind of animal do you want to add? ");
+					input = in.nextLine();
+					System.out.println("\n\n------------------------------------------------------------------------\n");
+					t.addAnimal(input);
+					break;
+				case "delete":
+					System.out.println("Enter the name of the animal you want to delete: ");
+					input = in.nextLine();
+					System.out.println("\n\n------------------------------------------------------------------------\n");
+					t.deleteAnimal(input);
+					break;
+				case "display":
+					System.out.println("Enter the name of the animal you want to display: ");
+					input = in.nextLine();
+					System.out.println("\n\n------------------------------------------------------------------------\n");
+					t.displayAnimals(input);
+					break;
+				case "full":
+					System.out.println("\n\n------------------------------------------------------------------------\n");
+					t.printVerboseList();
+					break;
+				case "exit":
+					exit = true;
+					System.out.println("\n\n------------------------------------------------------------------------\n");
+					break;
+			}
+			t.printSummaryView();
+		}while(exit == false);
+
+		System.out.println("\n\nThank you for using our zoo management system!");
+	}
 }
