@@ -18,7 +18,7 @@ public class ZooTest {
     alist.add(new Kangaroo("k", Animal.locationType.AIR, true, false, 3.2, Kangaroo.pouchSizeType.SMALL));
     alist.add(new Monkey("m", Animal.locationType.LAND, true, false, 1.4, "Endangered", Mammal.furType.NO, true, 1.5, Monkey.intelType.NOTHING));
     alist.add(new Parrot("pa", "least concern", "AIR",true, false, 8.2, 6.7, 4, "imitate human speech", "seeds"));
-    alist.add(new Penguin("pe","least concern","WATER", true, true, 11.7, 10.8, 7.9, "black");
+    alist.add(new Penguin("pe","least concern","WATER", true, true, 11.7, 10.8, 7.9, "black"));
     System.out.println("\n");
     printSummaryView();
     printVerboseList();
