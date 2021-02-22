@@ -18,6 +18,7 @@ public class ZooTest {
     alist.add(new Kangaroo("k", Animal.locationType.AIR, true, false, 3.2, Kangaroo.pouchSizeType.SMALL));
     alist.add(new Monkey("m", Animal.locationType.LAND, true, false, 1.4, "Endangered", Mammal.furType.NO, true, 1.5, Monkey.intelType.NOTHING));
     alist.add(new Parrot("pa", "least concern", "AIR",true, false, 8.2, 6.7, 4, "imitate human speech", "seeds"));
+    alist.add(new Penguin("pe","least concern","WATER", true, true, 11.7, 10.8, 7.9, "black");)
     System.out.println("\n");
     printSummaryView();
     printVerboseList();
@@ -68,6 +69,7 @@ public class ZooTest {
        //If the animal species are not in the list, return an error code 1
        return 1;
      }
+     alist.add(new_a);
      System.out.println(new_a.description());
      return 0;
    }
@@ -155,13 +157,13 @@ public class ZooTest {
     if(numSnake > 0){
       System.out.println(numSnake + " Snake(s)");
     }
-	
+
 	System.out.println();
  }
 
 	public void printVerboseList(){
 		for(int i = 0; i < alist.size(); i++){
-			System.out.println((i+1) + ": " + alist.get(i).getName() + "\t\t" + alist.get(i).getClass().getSimpleName() + "\t\t" +  alist.get(i).description()); 
+			System.out.println((i+1) + ": " + alist.get(i).getName() + "\t\t" + alist.get(i).getClass().getSimpleName() + "\t\t" +  alist.get(i).description());
 		}
 	} // end of printVerboseList
 
@@ -184,7 +186,7 @@ public class ZooTest {
 		do{
 			t.printInteractiveOptions();
 			input = in.nextLine();
-			
+
 			switch(input)
 			{
 				case "add":
