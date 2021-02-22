@@ -84,7 +84,7 @@ public final class Penguin extends Bird{
     //briefDescription only prints out the name of the penguin and its feather color.
     String briefDescription(){
         String result = this.name +" is a " + this.getClass().getName() + ". ";
-        result+=this.name+"has a " + this.colorOfFeathers + " color of feathers.\n";;
+        result += this.name+" has a " + this.colorOfFeathers + " color of feathers.\n";;
         return result;
     }
 

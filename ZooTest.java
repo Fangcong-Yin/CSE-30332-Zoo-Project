@@ -1,7 +1,10 @@
-/*Zoo Project Milestone 1
+/*
+Zoo Project Milestone 1
 Fangcong Yin (fyin2)
 Joseph Capdevielle (jcapdevi)
-Kenan Lumantas (klumanta)*/
+Kenan Lumantas (klumanta)
+*/
+
 import java.util.*;
 import java.util.Scanner;
 //The Test Class
@@ -13,12 +16,12 @@ public class ZooTest {
    // create the zoo list of animals
 
     alist = new ArrayList<Animal>();
-    alist.add(new Snake("s","threatened","WATER",true,false,8.1,68,true,false));
-    alist.add(new Crocodile("c","least concerned","LAND",true,true,43.2,86,true,false,20.1));
-    alist.add(new Kangaroo("k", Animal.locationType.AIR, true, false, 3.2, Kangaroo.pouchSizeType.SMALL));
-    alist.add(new Monkey("m", Animal.locationType.LAND, true, false, 1.4, "Endangered", Mammal.furType.NO, true, 1.5, Monkey.intelType.NOTHING));
-    alist.add(new Parrot("pa", "least concern", "AIR",true, false, 8.2, 6.7, 4, "imitate human speech", "seeds"));
-    alist.add(new Penguin("pe","least concern","WATER", true, true, 11.7, 10.8, 7.9, "black"));
+    alist.add(new Snake("Python", "threatened", "WATER", true, false, 8.1, 68, true, false));
+    alist.add(new Crocodile("Charlie", "least concerned", "LAND", true, true, 43.2, 86, true, false, 20.1));
+    alist.add(new Kangaroo("Hoppy", Animal.locationType.AIR, true, false, 3.2, Kangaroo.pouchSizeType.SMALL));
+    alist.add(new Monkey("George", Animal.locationType.LAND, true, false, 1.4, "Endangered", Mammal.furType.NO, true, 1.5, Monkey.intelType.NOTHING));
+    alist.add(new Parrot("Sqwaky", "least concern", "AIR", true, false, 8.2, 6.7, 4, "imitate human speech", "seeds"));
+    alist.add(new Penguin("Mumble","least concern","WATER", true, true, 11.7, 10.8, 7.9, "black"));
     System.out.println("\n");
     printSummaryView();
     printVerboseList();
@@ -163,7 +166,7 @@ public class ZooTest {
 
 	public void printVerboseList(){
 		for(int i = 0; i < alist.size(); i++){
-			System.out.println((i+1) + ": " + alist.get(i).getName() + "\t\t" + alist.get(i).getClass().getSimpleName() + "\t\t" +  alist.get(i).description());
+			System.out.println((i+1) + ": " + alist.get(i).getName() + "\t\t" + alist.get(i).getClass().getSimpleName() + "\t\t" +  alist.get(i).briefDescription());
 		}
 	} // end of printVerboseList
 

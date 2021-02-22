@@ -104,7 +104,7 @@ public final class Monkey extends Mammal
 
         //briefDescription only prints out the name of the monkey and its intelligence level.
         String briefDescription(){
-            String result = this.name +" is a " + this.getClass().getName() + ". ";
+            String result = this.name +" is a " + this.getClass().getName() + ".";
             result+=this.speciesDescription();
             return result;
         }

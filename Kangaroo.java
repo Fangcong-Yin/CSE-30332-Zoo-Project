@@ -81,7 +81,7 @@ public final class Kangaroo extends Mammal
 
         //briefDescription only prints out the name of the kangaroo and its pouchsize.
         String briefDescription(){
-            String result = this.name +" is a " + this.getClass().getName() + ". ";
+            String result = this.name +" is a " + this.getClass().getName() + ".";
             result+=this.speciesDescription();
             return result;
         }

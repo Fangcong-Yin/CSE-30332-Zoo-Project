@@ -64,16 +64,16 @@ public final class Snake extends Reptile{
             System.out.println(this.name + " does not lay eggs."); //Viviparous snake does not lay eggs
         }
     }
- String speciesDescription()
-     {
-        String result = " It has a forked tongue. ";
+    String speciesDescription()
+    {
+        String result = " It has a forked tongue.";
         return result;
-     }
-//briefDescription only prints out the name of the snake and whether it lays eggs.
-String briefDescription(){
-    String result = this.name +" is a " + this.getClass().getName() + ". ";
-    result+=this.name+(this.layEggs?" lays eggs.":" does not lay eggs.")+"\n";
-    return result;
-}
+    }
+    //briefDescription only prints out the name of the snake and whether it lays eggs.
+    String briefDescription(){
+        String result = this.name +" is a " + this.getClass().getName() + ". ";
+        result+=this.name+(this.layEggs?" lays eggs.":" does not lay eggs.")+"\n";
+        return result;
+    }
 
 }

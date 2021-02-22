@@ -77,8 +77,8 @@ public final class Crocodile extends Reptile{
      }
      //briefDescription only prints out the name of the crocodile and its jawlength.
      String briefDescription(){
-         String result = this.name +" is a " + this.getClass().getName() + ". ";
-         result+=this.name + "\' s jaw length is " + this.jawLength + "cm.\n";
+         String result = this.name + " is a " + this.getClass().getName() + ". ";
+         result += this.name + "\'s jaw length is " + this.jawLength + "cm.\n";
          return result;
      }
 

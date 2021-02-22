@@ -65,7 +65,7 @@ public final class Parrot extends Bird{
     //briefDescription only prints out the name of the parrot and its intelligence level.
     String briefDescription(){
         String result = this.name +" is a " + this.getClass().getName() + ". ";
-        result+=this.name+" is able to " + this.intelligence+ "\n";
+        result+=this.name+" is able to " + this.intelligence+ ".\n";
         return result;
     }
 

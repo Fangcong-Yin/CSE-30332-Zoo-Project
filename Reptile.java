@@ -17,7 +17,7 @@ String classDescription()
         String result = " Its body temperature is  " + this.bodyTemp + ".";
         result += " It can " + ((layEggs) ? "lay eggs" : "not lay eggs.");
         result += " It is " + ((isVenomous) ? "venomous" : "not venomous.");
-        result+=this.speciesDescription();
+        result += this.speciesDescription();
         return result;
     }
 
