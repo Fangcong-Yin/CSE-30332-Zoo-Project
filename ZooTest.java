@@ -5,6 +5,47 @@ Kenan Lumantas (klumanta)*/
 
 //The Test Class
 public class ZooTest {
+  Animal[] alist;
+
+ public void setupAnimals(){
+   //TODO based on your selected animals
+   // create the zoo list of animals
+   /*
+       int numAnimals = 6;
+       alist = new Animal[6];
+       alist[0] = new Dodo("Daisy", “fruits”);
+       alist[1] = new Dog("Marlee", “rope”);
+       alist[2] = new Shark("Jawsy", 7);
+       alist[3] = new Dog("Bagheera", “frisbee”);
+   alist[3].setAge(10);
+       alist[4] = new Whale("Shamu", 30);
+       System.out.println("\n");
+
+       printSummaryView();
+       printVerboseList();
+       */
+   } // end of setupAnimals
+
+ int addAnimal(Animal a){//}
+
+ int deleteAnimal(int index){//}
+
+ void displayAnimals(String name) {//}
+
+ void printSummaryView(){//}
+
+ public static void printVerboseList(){
+       int numAnimals = alist.length;
+
+       for(int i = 0; i < numAnimals; i++){
+           System.out.println((i+1) + ": " + alist[i].getName() + "\t\t" + alist[i].getClass().getSimpleName() + "\t\t" +  alist[i]); // toString() needs to be defined for this to work correctly
+       } // end for
+
+} // end of printVerboseList
+
+
+ static String printInteractiveOptions(){ … }
+
     public static void main(String args[]) {
 
       Animal zoo[] = new Animal[6];
